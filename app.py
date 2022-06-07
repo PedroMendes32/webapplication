@@ -9,5 +9,8 @@ agenda = [ { 'id':uuid4(),'Tarefa':'Caminhar com o cachorro','Status':'Realizada
 def inicio():
     return render_template('index.html',agenda = agenda )
     
+@app.route('/create')
+def create():
+    return render_template()
 
 app.run(debug=True)
