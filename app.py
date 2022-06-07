@@ -4,6 +4,7 @@ from uuid import uuid4
 app = Flask(__name__)
 
 agenda = [ { 'id':uuid4(),'Tarefa':'Caminhar com o cachorro','Status':'Realizada','Horário':"18:40",'Tipo':'Lazer'}]
+
            
 @app.route('/inicio')
 def inicio():
@@ -25,5 +26,6 @@ def save():
 def edit(id):
     return render_template('update.html')
 
+   
 
 app.run(debug=True)
