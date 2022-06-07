@@ -1,4 +1,13 @@
-print(" Ola mundo ")
+from flask import Flask, render_template
+from uuid import uuid4
 
-# Ao abrir o GitPod, execute:
-# pip install -r requirements.txt
+app = Flask(__name__)
+
+agenda = [ { 'id':uuid4(),'Tarefa':'Caminhar com o cachorro','Status':'Realizada','Horário':"18:40",'Tipo':'Lazer'}]
+           
+@app.route('/inicio')
+def inicio():
+    return render_template('index.html',agenda = agenda )
+    
+
+app.run(debug=True)
