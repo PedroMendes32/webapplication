@@ -21,4 +21,8 @@ def save():
     agenda.append({'id':uuid4(),'Tarefa':tarefa,'Status':'Não realizada','Horário':horario,'Tipo':tipo})
     return render_template('index.html', agenda = agenda )
 
+@app.route('/edit/<id>')
+def edit(id):
+    return render_template('update.html')
+
 app.run(debug=True)
