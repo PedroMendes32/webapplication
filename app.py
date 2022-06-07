@@ -13,12 +13,12 @@ def inicio():
 def create():
     return render_template('create.html')
 
-@app.route('/save')
+@app.route('/save', methods = ['POST'])
 def save():
     tarefa = request.form['Tarefa']
     horario = request.form['Horário']
     tipo = request.form['Tipo']
     agenda.append({'id':uuid4(),'Tarefa':tarefa,'Status':'Não realizada','Horário':horario,'Tipo':tipo})
-    return render_template('index.html',agenda = agenda)
+    return render_template('index.html', agenda = agenda )
 
 app.run(debug=True)
