@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from uuid import uuid4
 
 app = Flask(__name__)
