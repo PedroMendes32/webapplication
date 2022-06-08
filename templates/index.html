@@ -25,7 +25,7 @@
                 <td>{{tarefa['Tipo']}} </td>
                 <td> {{tarefa['Status']}} </td>
                 <td class="text-center"><a href="/edit/{{tarefa['id']}}" class = 'btn btn-sm btn-success'>Editar</a>
-                    <a href="#" class = 'btn btn-sm btn-danger'>Apagar tarefa</a></td>
+                    <a href="/delete/{{tarefa['id']}}" class = 'btn btn-sm btn-danger'>Apagar tarefa</a></td>
             </tr>
             {% endfor %}
         </table>

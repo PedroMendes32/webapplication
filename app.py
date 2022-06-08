@@ -41,4 +41,12 @@ def salvar_edicao(id):
     agenda[i] = {'id':id_modificado,'Tarefa':n_tarefa,'Status':n_status,'Horário':n_horario,'Tipo':n_tipo}
     return redirect('/inicio')
 
+@app.route('/delete/<id>')
+def delete(id):
+    for tarefa in agenda:
+        if ( id == str(tarefa['id'])):
+            i = agenda.index(tarefa)
+            del agenda[i]
+            return redirect('\inicio')
+
 app.run(debug=True)
