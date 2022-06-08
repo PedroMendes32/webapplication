@@ -10,25 +10,25 @@
 <body>
     <h1> Editar tarefa </h1>
     <div class="container">
-        <form action="/save" method="POST">
+        <form action="/edit/tarefa/{{tarefa['id']}}" method="POST">
             <div class="form-group">
                 <label> Nova tarefa </label>
-                <input type="text" name="Tarefa" required = "true" class="form-control"/>
+                <input type="text" name="Tarefa" value ="{{tarefa['Tarefa']}}" required = "true" class="form-control"/>
             </div>
             <div class="form-group">
                 <label> Novo horário </label>
-                <input type="text" name="Horário" required="true"  class="form-control"/>
+                <input type="text" name="Horário" value ="{{tarefa['Horário']}}" required="true"  class="form-control"/>
             </div>
             <div class="form-group">
                 <label>Novo tipo</label>
-                <input type="text" name="Tipo" required = "true" class="form-control"/>
+                <input type="text" name="Tipo" value ="{{tarefa['Tipo']}}" required = "true" class="form-control"/>
             </div>
             <div class="form-group">
                 <label> Alterar status </label>
-                <input type="text" name="Status" required = "true" class="form-control"/>
+                <input type="text" name="Status" value ="{{tarefa['Status']}}"  required  = "true" class="form-control"/>
             </div> 
             <br>
-            <a href="#" class="btn btn-primary"> Salvar alterações </a>
+            <button class="btn btn-primary">Salvar Alterações </button>
         </form>
     </div>
 </body>
