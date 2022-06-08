@@ -40,15 +40,6 @@ def salvar_edicao(id):
     n_tipo = request.form['Tipo']
     agenda[i] = {'id':id_modificado,'Tarefa':n_tarefa,'Status':n_status,'Horário':n_horario,'Tipo':n_tipo}
     return redirect('/inicio')
-
-    with open('Tarefas.csv','rt') as file_in:
-        leitura = csv.DictReader(file_in)
-        for tarefa in leitura:
-            agenda.append(dict(tarefa))
-    
-    with open('Tarefas.csv','wt') as file_out:
-            escrita = csv.DictReader(file_out,['id','Tarefa','Status','Horário','Tipo'])
-            escrita.writeheader()
-            escrita.writerows(agenda)
+   
 
 app.run(debug=True)
