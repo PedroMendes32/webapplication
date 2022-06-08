@@ -31,7 +31,7 @@ def edit(id):
 @app.route('/edit/tarefa/<id>', methods=['POST'])
 def salvar_edicao(id):
     for tarefa in agenda:
-        if id == str(tarefa['id']):
+        if (id == str(tarefa['id'])):
             i = agenda.index(tarefa)
             id_modificado = tarefa['id']
     n_tarefa = request.form['Tarefa']
@@ -40,6 +40,5 @@ def salvar_edicao(id):
     n_tipo = request.form['Tipo']
     agenda[i] = {'id':id_modificado,'Tarefa':n_tarefa,'Status':n_status,'Horário':n_horario,'Tipo':n_tipo}
     return redirect('/inicio')
-   
 
 app.run(debug=True)
