@@ -8,6 +8,13 @@ agenda = [ { 'id':uuid4(),'Tarefa':'Caminhar com o cachorro','Status':'Realizada
 
 @app.route('/inicio')
 def inicio():
+    with open('Tarefas.csv', 'wt') as file_out:
+        escritor = csv.DictWriter(file_out,['id','Tarefa','Status','Horário','Tipo'])
+        escritor.writeheader()
+        escritor.writerows(agenda)
+
+    with open('Tarefas.csv','rt') as file_in:
+        leitor = csv.DictReader(file_in)
     return render_template('index.html',agenda = agenda )
     
 @app.route('/create')
@@ -48,5 +55,6 @@ def delete(id):
             i = agenda.index(tarefa)
             del agenda[i]
             return redirect('\inicio')
+
 
 app.run(debug=True)
